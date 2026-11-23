@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Georgy Bogachev">
+    <title>Dungeon Loot Splitter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Dungeon Loot Splitter</h1>
+    </header>
+
+    <main>
+        <section class="panel">
+            <h2>Party Setup</h2>
+
+            <div class="item-form">
+                <label for="party-member-number">Number of Party Members: </label>
+                <input type="number" id="party-member-number" placeholder="2">
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Add Loot</h2>
+
+            <div class="item-form">
+                <label for="loot-name">Loot Name: </label>
+                <input type="text" id="loot-name" placeholder="Flaming Sword">
+            </div>
+
+            <div class="item-form">
+                <label for="loot-value">Loot Value: </label>
+                <input type="number" id="loot-value" placeholder="75" step="0.01">
+            </div>
+
+            <button type="button" id="add-loot-button">Add Loot</button>
+        </section>
+
+        <section class="panel">
+            <h2>Loot List</h2>
+
+            <ol id="loot-added"></ol>
+
+            <p>Total Loot: <span id="total-loot-value">0.00</span></p>
+        </section>
+
+        <section class="panel">
+            <h2>Split Loot</h2>
+
+            <button type="button" id="split-loot-button">Split Loot</button>
+
+            <p>Total Loot: <span id="split-total-loot-value">0.00</span></p>
+            <p>Loot Per Party Member: <span id="loot-per-member">0.00</span></p>
+
+            <p id="validation"></p>
+        </section>
+
+        <section class="panel reflection">
+            <h2>Logic Explanation</h2>
+            <p>The loot array works by taking loot name and loot value inputs, checking if they are valid, and pushing them into the array under "name:" "value:".</p>
+            <p>Loops are used to update the DOM loot list. It works by looping through the item list array and creating a new "li" for every item.</p>
+            <p>"If statements" are used to make decisions about whether input is valid or not, they prevent the application from crashing by preventing bad data from being stored.</p>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
